@@ -47,5 +47,45 @@ def dayOne_b():
         c += int(str(a) + str(b))
     return c
 
-print(dayOne())
-print(dayOne_b())
+def d2color(color, number):
+    if (color == 'red' and int(number) > 12) or (color == 'green' and int(number) > 13) or (color == 'blue' and int(number) > 14):
+        return True
+    else:
+        return False
+    
+
+def dayTwo():
+    data = getData('2').readlines(-1)
+    sum = 0
+    impossible = []
+    for line in data:
+        game = line.split(':')
+        gameNum = game[0].split(' ')[1]
+        draws = game[1].split(';')
+        include = True
+        for draw in draws:
+            if include == False:
+                break
+            cubes = draw.split(',')
+            for cube in cubes:
+                if include == False:
+                    break
+                values = cube.split(' ')
+                if d2color(values[2].strip(),values[1].strip()) == True:
+                    include = False
+                    break
+        if include == True:
+            print("Include: " + line.replace("\n",""))
+            sum += int(gameNum)
+            #print(gameNum + ' ' + str(sum))
+            include == False
+        else:
+            print("Exclude: " + line.replace("\n",""))
+            
+        
+
+    return sum
+
+
+print(dayTwo())
+#print(dayOne_b())
