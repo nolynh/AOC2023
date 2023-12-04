@@ -104,16 +104,18 @@ def dayTwo_b():
                 if values[2].strip() == 'blue':
                     b = max([b,int(values[1].strip())])
         if include == True:
-            print(line.replace("\n",""))
-            print("r: " + str(r))
-            print("g: " + str(g))
-            print("b: " + str(b))
-            print(max([r,g,b,r*g,r*b,r*g*b,g*b]))
+            #print(line.replace("\n",""))
+            #print("r: " + str(r))
+            #print("g: " + str(g))
+            #print("b: " + str(b))
+            #print(max([r,g,b,r*g,r*b,r*g*b,g*b]))
             sum += max([r,g,b,r*g,r*b,r*g*b,g*b])
-            print('Sum: '+ str(sum))
+            #print('Sum: '+ str(sum))
             impossible.append(max([r,g,b,r*g,r*b,r*g*b,g*b]))
             include == False
     
     return sum
+
+
 print(dayTwo_b())
 #print(dayOne_b())
