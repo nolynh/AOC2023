@@ -102,17 +102,15 @@ def dayTwo_b():
                 if values[2].strip() == 'blue':
                     b = max([b,int(values[1].strip())])
         if include == True:
-            #print(line.replace("\n",""))
-            #print("r: " + str(r))
-            #print("g: " + str(g))
-            #print("b: " + str(b))
-            #print(max([r,g,b,r*g,r*b,r*g*b,g*b]))
-            sum += max([r,g,b,r*g,r*b,r*g*b,g*b])
-            #print('Sum: '+ str(sum))
+            sum += r*g*b
             include == False
     
     return sum
 
 
-print(dayTwo_b())
+def dayThree():
+    data = getData('3').readlines(-1)
+    return True
+
+print(dayThree())
 #print(dayOne_b())
