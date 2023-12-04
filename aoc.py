@@ -79,5 +79,41 @@ def dayTwo():
             include == False
     return sum
 
-print(dayTwo())
+def dayTwo_b():
+    data = getData('2').readlines(-1)
+    sum = 0
+    impossible = []
+    for line in data:
+        game = line.split(':')
+        gameNum = game[0].split(' ')[1]
+        draws = game[1].split(';')
+        include = True
+        r = 1
+        g = 1
+        b = 1
+        for draw in draws:
+            if include == False:
+                break
+            cubes = draw.split(',')
+            for cube in cubes:
+                values = cube.split(' ')
+                if values[2].strip() == 'red':
+                    r = max([r,int(values[1].strip())])
+                if values[2].strip() == 'green':
+                    g = max([g,int(values[1].strip())])
+                if values[2].strip() == 'blue':
+                    b = max([b,int(values[1].strip())])
+        if include == True:
+            print(line.replace("\n",""))
+            print("r: " + str(r))
+            print("g: " + str(g))
+            print("b: " + str(b))
+            print(max([r,g,b,r*g,r*b,r*g*b,g*b]))
+            sum += max([r,g,b,r*g,r*b,r*g*b,g*b])
+            print('Sum: '+ str(sum))
+            impossible.append(max([r,g,b,r*g,r*b,r*g*b,g*b]))
+            include == False
+    
+    return sum
+print(dayTwo_b())
 #print(dayOne_b())
