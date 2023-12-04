@@ -82,10 +82,8 @@ def dayTwo():
 def dayTwo_b():
     data = getData('2').readlines(-1)
     sum = 0
-    impossible = []
     for line in data:
         game = line.split(':')
-        gameNum = game[0].split(' ')[1]
         draws = game[1].split(';')
         include = True
         r = 1
@@ -111,7 +109,6 @@ def dayTwo_b():
             #print(max([r,g,b,r*g,r*b,r*g*b,g*b]))
             sum += max([r,g,b,r*g,r*b,r*g*b,g*b])
             #print('Sum: '+ str(sum))
-            impossible.append(max([r,g,b,r*g,r*b,r*g*b,g*b]))
             include == False
     
     return sum
