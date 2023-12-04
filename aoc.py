@@ -75,17 +75,9 @@ def dayTwo():
                     include = False
                     break
         if include == True:
-            print("Include: " + line.replace("\n",""))
             sum += int(gameNum)
-            #print(gameNum + ' ' + str(sum))
             include == False
-        else:
-            print("Exclude: " + line.replace("\n",""))
-            
-        
-
     return sum
-
 
 print(dayTwo())
 #print(dayOne_b())
